@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>1부</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="theme-dark.css" />
+    <script>
+        function connect() {
+            const evtSource = new EventSource("/events");
+            evtSource.onmessage = () => {
+                location.reload();
+            };
+            evtSource.onerror = () => {
+                evtSource.close();
+                setTimeout(connect, 1000);
+            };
+        }
+        connect();
+    </script>
+</head>
+
+<body>
+
+    <!-- 🔝 상단 버튼 -->
+    <div class="top-bar">
+        <div class="top-buttons">
+            <button onclick="location.href='index.html'">홈</button>
+            <button id="scriptToggle">설명</button>
+        </div>
+
+        <!-- 🔥 버튼 아래에 붙는 대본 -->
+        <div id="scriptBox">
+            <div class="script-item active">1997년, Nokia에서 스마트폰의 개념을 정립해나갔다. 그 후 RIM(현재 Blackberry), Palm사 등에서 각각의 OS를
+                갖고 스마트폰을 출시했다.
+                <br><br> 2006년부터 Apple에서 스마트폰을 출시한다는 유출
+                기사가 보도됐고, 2007년 1월 아이폰을 발표했다. 2006년 "iPhone"을 출시했고, 국내에서도 삼성, LG 등에서 잇달아 출시했다.
+                <br><br> 스마트폰에 있는 프로그램들을
+                application, 줄여서 App이라고
+                칭하면서 앱 개발 생태계가 열렸다.
+            </div>
+            <div class="script-item">Android Inc.(후에 Google이 인수)가 개발한 Android와 Apple이 개발한 iOS를 사용하는 스마트폰이 시장 점유율이 높았고 이에
+                따라 다른 OS는 점점 사라졌다. Android는 Java를
+                사용했고, iOS는 자체 개발한 C언어 기반의 Objective-C를 사용했다.<br><br> 이 두 OS를 제외하고는 전부 low-level language를 사용했기 때문에 개발
+                난이도가 높았다.
+            </div>
+            <div class="script-item">Apple은 자체 개발한 Swift라는 언어를 기존에 iOS 개발에 사용하는 IDE인 XCode에서 사용하도록 개발했다.
+                <br><br> JetBrains는 Kotlin이라는 언어를 개발했고 Android Studio라는 IDE를
+                개발했다.
+            </div>
+            <div class="script-item">두 언어로 개발해야 하는 앱 개발이 개발자들에게 부담이기에 한 번 개발을 해서 양 쪽 OS를 지원하는 것을 원했고 그 때 등장한 것이
+                하이브리드앱이다. PhoneGap(Cordova)과 Ionic이 대표적이다.
+                <br><br>
+                동작 방식으로 인해 네이티브로 개발한 것보다 성능이 떨어져서 그러한 단점을 개선한 것이 크로스 플랫폼이고, 가장 널리 사용되는 것이 Facebook과 Google이 개발한 프레임워크다.
+            </div>
+            <div class="script-item">
+                Facebook(현 Meta)은 웹 개발 생태계에서 상태가 핵심 기념인 React라는 프레임워크를 만들었고, 이 개념을 확장해서 React Native라는 프레임워크를 만들었다. JS,
+                TS를 사용하여 개발하기
+                때문에 웹 개발자들의 러닝커브가 낮았다.
+                <br><br>
+                하지만 React Native에도 단점은 있었고, 이를 조금 보완하고자 만든 프레임워크가 Google의 Flutter이다. Flutter는 Google이 자체 제작한 언어인 Dart를
+                사용하기 때문에 웹 개발을 하던
+                개발자들에겐 낯설지만, C언어와 문법이 유사하여 다른 개발자들의 러닝커브는 낮았다. 하지만 다른 언어를 배운다는 자체로 언어 학습 속도는 React Native에 비해서 느린 편이다.
+            </div>
+        </div>
+    </div>
+
+    <!-- 🔥 가로 스크롤 컨테이너 -->
+    <div class="horizontal">
+
+        <section class="panel"><img class="img1" src="./src/image1.jpg" alt=""></section>
+        <section class="panel"><img class="img1" src="./src/image2.png" alt=""></section>
+        <section class="panel"><img class="img1" src="./src/image3.png" alt=""></section>
+        <section class="panel"><img class="img1" src="./src/image4.png" alt=""></section>
+        <section class="panel"><img class="img1" src="./src/image5.png" alt=""></section>
+
+    </div>
+
+    <!-- 🔥 프로그레스 -->
+    <div class="progress-wrap">
+        <div class="progress"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

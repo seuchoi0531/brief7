@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Expo 발표</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="theme-dark.css" />
+    <script>
+        function connect() {
+            const evtSource = new EventSource("/events");
+            evtSource.onmessage = () => {
+                location.reload();
+            };
+            evtSource.onerror = () => {
+                evtSource.close();
+                setTimeout(connect, 1000);
+            };
+        }
+        connect();
+    </script>
+</head>
+
+<body class="center">
+    <h1>expo로 앱 개발 시작해보기</h1>
+    <div class="menu">
+        <a href="part1.html" class="btn">들어가기 전에</a>
+        <a href="#" class="btn">expo 튜토리얼</a>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 스크롤바 제거 */
+body {
+    overflow: hidden;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* index */
+.center {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu {
+    margin-top: 30px;
+}
+
+.btn {
+    display: block;
+    margin: 10px;
+    padding: 10px 20px;
+    background: black;
+    color: white;
+    text-decoration: none;
+}
+
+/* 상단 바 */
+.top-bar {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 9999;
+    /* 🔥 이거 추가 */
+}
+
+/* 버튼 가로 정렬 */
+.top-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+/* 대본 박스 */
+#scriptBox {
+    display: none;
+    margin-top: 8px;
+    background: #eee;
+    padding: 10px;
+    width: 220px;
+    border-radius: 6px;
+
+    .script-item {
+        display: none;
+    }
+
+    .script-item.active {
+        display: block;
+    }
+}
+
+/* 가로 스크롤 */
+.horizontal {
+    display: flex;
+    width: max-content;
+    transition: transform 0.7s ease-in-out;
+    /* 🔥 핵심 */
+}
+
+.panel {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+
+    img.img1 {
+        width: 1000px;
+        height: auto;
+        object-fit: cover;
+    }
+}
+
+/* 프로그레스 */
+.progress-wrap {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: #ddd;
+}
+
+.progress {
+    height: 100%;
+    width: 0%;
+    background: black;
+}

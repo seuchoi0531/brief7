@@ -1,0 +1,51 @@
+:root {
+    --bg: #1e1f24;
+    /* 🔥 좀 밝게 */
+    --text: #f1f1f1;
+    --sub: #c0c0c0;
+    --card: #2a2d34;
+    /* 카드 더 밝게 */
+    --border: #3a3f47;
+    --accent: #6ea8ff;
+    /* 포인트 살짝 밝게 */
+}
+
+/* 전체 */
+body {
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* 버튼 */
+button,
+.btn {
+    background: var(--card);
+    color: var(--text);
+    border: 1px solid var(--border);
+}
+
+button:hover,
+.btn:hover {
+    background: #343844;
+    /* hover도 밝게 */
+}
+
+/* 대본 */
+#scriptBox {
+    background: var(--card);
+    border: 1px solid var(--border);
+}
+
+/* 패널 */
+.panel {
+    background: var(--bg);
+}
+
+/* 프로그레스 */
+.progress-wrap {
+    background: var(--border);
+}
+
+.progress {
+    background: var(--accent);
+}
